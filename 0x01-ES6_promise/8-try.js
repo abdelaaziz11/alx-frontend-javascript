@@ -1,6 +1,6 @@
 export default function divideFunction(numerator, denominator) {
   try {
-    if ( denominator === 0) {
+    if (denominator === 0) {
       throw new Error();
     }
     return numerator / denominator;
