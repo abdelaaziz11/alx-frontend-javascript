@@ -1,5 +1,5 @@
 export default function signUpUser(firstName, lastName) {
-  return Promise((resolve) => {
-    resolve({ firstName: value, lastName: value, }
+  return new Promise((resolve) => {
+    resolve({ firstName, lastName }
   });
 }
