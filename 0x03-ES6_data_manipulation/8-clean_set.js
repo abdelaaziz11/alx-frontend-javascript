@@ -9,11 +9,11 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  set.forEach((value) => {
-    if (value.startsWith(startString)) {
-      res.push(value.slice(startString.length));
+  for (const item of set) {
+    if (item && item.startsWith(startString)) {
+      list.push(item.slice(startString.length));
     }
-  });
+  }
 
   return res.join('-');
 }
