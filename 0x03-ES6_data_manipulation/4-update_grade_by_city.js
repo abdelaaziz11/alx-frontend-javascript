@@ -1,25 +1,16 @@
-export default function updateStudentGradeByCity(
-    students,
-    city,
-    newGrades,
-  ) {
-    const filterStudents = students.filter(
-      (student) => student.location === city,
-    );
-  
-    const gradeStudents = filterStudents.map(
-      (student) => {
-        for (const gradeInfo of newGrades) {
-          if (student.id === gradeInfo.studentId) {
-            student.grade = gradeInfo.grade; // eslint-disable-line no-param-reassign
-          }
-        }
-        if (student.grade === undefined) {
-          student.grade = 'N/A'; // eslint-disable-line no-param-reassign
-        }
-        return student;
-      },
-    );
-
-  return gradeStudents;
+export default function updateStudentGradeByCity(listStudents, city, newGrades) {
+  const students = listStudents.filter((student) => student.location === city);
+  for (const student of students) {
+    student.grade = 'N/A';
+  }
+  const newStudents = students.map((student) => {
+    const single = student;
+    for (const grade of newGrades) {
+      if (single.id === grade.studentId) {
+        single.grade = grade.grade;
+      }
+    }
+    return single;
+  });
+  return newStudents;
 }
