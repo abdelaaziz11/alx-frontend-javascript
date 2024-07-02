@@ -20,6 +20,6 @@ export default function updateStudentGradeByCity(
         return student;
       },
     );
-  
+
   return gradeStudents;
 }
