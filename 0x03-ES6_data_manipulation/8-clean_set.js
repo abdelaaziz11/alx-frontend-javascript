@@ -1,5 +1,5 @@
 export default function cleanSet(set, startString) {
-  const res = [];
+  const list = [];
 
   if (
     typeof set !== 'object'
@@ -15,5 +15,5 @@ export default function cleanSet(set, startString) {
     }
   }
 
-  return res.join('-');
+  return list.join('-');
 }
